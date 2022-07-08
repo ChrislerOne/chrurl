@@ -5,6 +5,9 @@ from sqlalchemy import select, update, delete, insert
 def select_all(session, table):
     return session.query(table).all()
 
+def select_where(session, table, where):
+    return session.query(table).filter(where).all()
+
 def update_one(session, table, id, data):
     session.query(table).filter(table.id == id).update(data)
     session.commit()
