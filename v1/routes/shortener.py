@@ -18,7 +18,7 @@ async def get_all_urls():
 
 @router.post("/shorten")
 async def short_url(origin_url: str):
-    return "http://127.0.0.1:8000/" + str(shorten_url(origin_url))
+    return str(shorten_url(origin_url))
 
 
 @router.get("/{shorty}")
